@@ -1,23 +1,31 @@
-# [`comunicaciones.h`](/include/comunicaciones.h)
+---
+sidebar_position: 2
+---
+
+# Comunicaciones
 Contiene todas las funciones relacionadas con el módulo RF.
+
 ## Funciones
 ### `rf_init`
-**Descripción:**\
+**Descripción:**
+
 Inicializa el módulo de RF.
 
-**Parámetros:**\
+**Parámetros:**
 - `mod` ([`RFMod`](#rfmod)): La modulación que usar. `FSK` o `LORA`.
 - `potencia` (`uint8_t`): La potencia a usar, va de `1` a `14`.
 - `bitrate` (`uint16_t`): El bitrate de la comunicación (16 bits), revisar documentación (punto 2.5.4.8 de [RN2483-Commands.pdf](/docs/RN2483-Commands.pdf)).
 
 ### `rf_send`
-**Descripción:**\
+**Descripción:**
+
 Envia los datos por el puerto serie. Espera a una respuesta, y la guarda en `data`. El LED integrado estará encendido mientras se estén mandando los datos.
 
-**Parámetros:**\
+**Parámetros:**
 - `dato` (`char[]`): El mensaje que mandar.
 
-**Devuelve ([`RFError`](#rferror)):**\
+**Devuelve ([`RFError`](#rferror)):**
+
 `OK` si no ha habido ningun error. O un error en caso contrario. Errores posibles: `TX_PARAM`, `TX_BUSY`, `TX_ERROR`
 
 ## Enumeraciones
